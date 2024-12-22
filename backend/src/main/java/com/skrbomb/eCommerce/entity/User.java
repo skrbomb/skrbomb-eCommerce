@@ -57,7 +57,9 @@ public class User {
 
     @OneToOne(
             fetch = FetchType.LAZY,
-            cascade = CascadeType.ALL
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            mappedBy = "user"
     )
     private Address address;
 

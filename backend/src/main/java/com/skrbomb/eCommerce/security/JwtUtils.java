@@ -24,7 +24,7 @@ public class JwtUtils {
 
     private SecretKey secretKey;
 
-    @Value("${secretJwtString")
+    @Value("${secretJwtString}")
     private String secretJwtString;
     //make sure the value in the application.properties is equal or more than 32 characters long
 
@@ -75,17 +75,4 @@ public class JwtUtils {
     private boolean isTokenExpired(String token){
         return extractClaims(token,Claims::getExpiration).before(new Date());
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

@@ -74,11 +74,12 @@ public class ProductServiceImpl implements ProductService {
 
         if(category!=null)  product.setCategory(category);
         if(productImageUrl!=null) product.setImageUrl(productImageUrl);
-        if(name!=null && !name.isEmpty()) product.setName(name);
-        if(description!=null && !description.isEmpty()) product.setDescription(description);
+        if(name!=null) product.setName(name);
+        if(description!=null) product.setDescription(description);
         if(price != null) product.setPrice(price);
 
         productRepo.save(product);
+        productRepo.flush();
 
         return Response.builder()
                 .status(200)
